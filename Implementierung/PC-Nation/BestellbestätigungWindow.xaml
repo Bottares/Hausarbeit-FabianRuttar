@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="PC_Nation.BestellbestätigungWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PC_Nation"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid>
+        <StackPanel Margin="0,50">
+            <TextBlock Text="Vielen Dank für Ihre Bestellung bei PC Naton" FontSize="30"></TextBlock>
+            <TextBlock Text="Ihre Bestellung wird nun von uns bearbeitet. Wir bemühen uns um schnellstmögliche Zusendung Ihrer Ware. Die übliche Lieferdauer beträgt 3-5 Tage." Margin="0,20" TextWrapping="Wrap"></TextBlock>
+            <TextBlock Text="Falls Sie noch Fragen haben, kontaktieren Sie uns unter folgender E-Mail-Adresse:" Margin="0,5"></TextBlock>
+            <TextBlock Text="info@pcnation.de"></TextBlock>
+        </StackPanel>
+    </Grid>
+</UserControl>

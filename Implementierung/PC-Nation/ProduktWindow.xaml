@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="PC_Nation.ProduktWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PC_Nation"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="400"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="350"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="ProduktInfo" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" FontSize="20" FontWeight="Bold" TextWrapping="Wrap"></TextBlock>
+        <Image x:Name="Produkt" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Stretch="Uniform"></Image>
+        
+        <StackPanel Grid.Row="1" Grid.Column="2" Margin="20,30,0,0">
+            <Label x:Name="ProduktPreis" FontSize="25" Foreground="Red"></Label>
+            <Label Content="inkl. MwSt.* zzgl. Versandkosten" Margin="0,10,0,0"></Label>
+            <Label Content="Auf Lager. Lieferung in 3-5 Werktagen" Foreground="Green"></Label>
+            <DockPanel>
+                <Label Content="Artikel-Nr.:"></Label>
+                <Label x:Name="ProduktArtikelNummer" DockPanel.Dock="Right"></Label>
+            </DockPanel>
+            <Button x:Name="Favoriten_Button" Content="Zur Favoritenliste hinzufügen" Background="Red" Foreground="WhiteSmoke" Height="25" Margin="0,20,100,0" Cursor="Hand" Click="Favoriten_Button_Click"></Button>
+            <Button x:Name="Warenkorb_Button" Content="Zum Warenkorb hinzufügen" Background="Red" Foreground="WhiteSmoke" Height="25" Margin="0,20,100,0" Cursor="Hand" Click="Warenkorb_Button_Click"></Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

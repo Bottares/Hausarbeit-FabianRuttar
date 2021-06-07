@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="PC_Nation.DatenschutzWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PC_Nation"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid>
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5">
+            <TextBlock Text="Datenschutz" FontSize="20" FontWeight="DemiBold"></TextBlock>
+            <TextBlock Text="Datenschutzerklärung" FontSize="16" FontWeight="DemiBold" Margin="0,20,0,0"></TextBlock>
+            <TextBlock Text="Soweit nachstehend keine anderen Angaben gemacht werden, ist die Bereitstellung Ihrer personenbezogenen Daten weder gesetzlich oder vertraglich vorgeschrieben, noch für einen Vertragsabschluss erforderlich. Sie sind zur Bereitstellung der Daten nicht verpflichtet. 
+                             Eine Nichtbereitstellung hat keine Folgen. Dies gilt nur soweit bei den nachfolgenden Verarbeitungsvorgängen keine anderweitige Angabe gemacht wird." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+
+            <TextBlock Text="Personenbezogene Daten sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+            <TextBlock Text="Server-Logfiles Sie können unsere Webseiten besuchen, ohne Angaben zu Ihrer Person zu machen. Bei jedem Zugriff auf unsere Website werden an uns oder unseren Webhoster / IT-Dienstleister Nutzungsdaten durch Ihren Internet Browser übermittelt und in Protokolldaten 
+                       (sog. Server-Logfiles) gespeichert. Zu diesen gespeicherten Daten gehören z.B. der Name der aufgerufenen Seite, Datum und Uhrzeit des Abrufs, die IP-Adresse, die übertragene Datenmenge und der anfragende Provider. Die Verarbeitung erfolgt auf Grundlage des Art. 6 Abs. 
+                       1 lit. f DSGVO aus unserem überwiegenden berechtigten Interesse an der Gewährleistung eines störungsfreien Betriebs unserer Website sowie zur Verbesserung unseres Angebotes." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+
+            <TextBlock Text="Kundenkonto" FontSize="16" FontWeight="DemiBold" Margin="0,30,0,0"></TextBlock>
+            <TextBlock Text="Bei der Eröffnung eines Kundenkontos erheben wir Ihre personenbezogenen Daten in dem dort angegebenen Umfang. Die Datenverarbeitung dient dem Zweck, Ihr Einkaufserlebnis zu verbessern und die Bestellabwicklung zu vereinfachen. Die Verarbeitung 
+                       erfolgt auf Grundlage des Art. 6 Abs. 1 lit. a DSGVO mit Ihrer Einwilligung. Sie können Ihre Einwilligung jederzeit durch Mitteilung an uns widerrufen, ohne dass die Rechtmäßigkeit der aufgrund der Einwilligung bis zum Widerruf erfolgten Verarbeitung berührt wird. Ihr Kundenkonto wird anschließend gelöscht." 
+                       TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+        </StackPanel>
+    </Grid>
+</UserControl>

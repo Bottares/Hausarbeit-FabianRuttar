@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="PC_Nation.VersandWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PC_Nation"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid>
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5">
+            <TextBlock Text="Versand und Zahlungsbedinungen" FontSize="20" FontWeight="DemiBold"></TextBlock>
+            <TextBlock Text="Lieferungen im Inland (Deutschland):" FontSize="16" FontWeight="DemiBold" Margin="0,10,0,0"></TextBlock>
+            <TextBlock Text="Wir berechnen die Versandkosten pauschal mit 6,90 € pro Bestellung. Ab einem Bestellwert von 500,00 € liefern wir versandkostenfrei (gilt nur für Bestellungen mit Vorabüberweisung - kein PayPal oder AMAZON Pay)
+Bei der Lieferung auf deutsche Inseln wird ein Inselzuschlag von 13,00 € auf die Versandkosten erhoben." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+
+            <TextBlock Text="Lieferungen ins Ausland:" FontSize="16" FontWeight="DemiBold" Margin="0,10,0,0"></TextBlock>
+            <TextBlock Text="Wir berechnen die Versandkosten ins Ausland pauschal wie folgt:" Margin="0,10,0,0"></TextBlock>
+            <TextBlock Text="Österreich: 14,90 €" Margin="0,10,0,0"></TextBlock>
+            <TextBlock Text="Belgien: 14,90 €"></TextBlock>
+            <TextBlock Text="Luxemburg: 14,90 €"></TextBlock>
+            <TextBlock Text="Dänemark: 14,90 €"></TextBlock>
+            <TextBlock Text="Spanien: 14,90 €"></TextBlock>
+            <TextBlock Text="Frankreich: 14,90 €"></TextBlock>
+            <TextBlock Text="Italien: 14,90 €"></TextBlock>
+            <TextBlock Text="Niederlande: 14,90 €"></TextBlock>
+
+            <TextBlock Text="Achtung: Bei Lieferungen auf Inseln im obengenannten Ausland wird ein Zuschlag von 25 Euro fällig. Wir behalten uns aber vor, Insellieferungen abzulehnen." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+
+            <TextBlock Text="Akzeptierte Zahlungsmöglichkeiten:" FontSize="16" FontWeight="DemiBold" Margin="0,10,0,0"></TextBlock>
+            <TextBlock Text="- Vorkasse per Überweisung" Margin="0,10,0,0"></TextBlock>
+            <TextBlock Text="- Zahlung per PayPal"></TextBlock>
+            <TextBlock Text="- Zahlung per PayPal Express"></TextBlock>
+            <TextBlock Text="- Zahlung per PayPal (Kreditkarte, Lastschrift, ggf. Rechnung - KEIN PayPal Konto notwendig)"></TextBlock>
+            <TextBlock Text="- Zahlung per Ratenkauf easycredit"></TextBlock>
+            <TextBlock Text="- Zahlung per Sofort"></TextBlock>
+            <TextBlock Text="- Zahlung per amazon payments"></TextBlock>
+        </StackPanel>
+    </Grid>
+</UserControl>

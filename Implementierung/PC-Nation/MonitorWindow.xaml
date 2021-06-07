@@ -1,0 +1,156 @@
+﻿<UserControl x:Class="PC_Nation.MonitorWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PC_Nation"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800" Loaded="MonitorWindow_loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="MonitorLabel" Content="Monitore" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"></Label>
+
+        <Border Grid.Row="1" Grid.Column="0" BorderThickness="0.5" BorderBrush="Black">
+            <Image x:Name="Monitor_1" Stretch="Uniform" MouseLeftButtonDown="Monitor1_Click" Cursor="Hand"></Image>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="1" BorderThickness="0.5" BorderBrush="Black">
+            <Image x:Name="Monitor_2" Stretch="Uniform" MouseLeftButtonDown="Monitor2_Click" Cursor="Hand"></Image>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="2" BorderThickness="0.5" BorderBrush="Black">
+            <Image x:Name="Monitor_3" Stretch="Uniform" MouseLeftButtonDown="Monitor3_Click" Cursor="Hand"></Image>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="3" BorderThickness="0.5" BorderBrush="Black">
+            <Image x:Name="Monitor_4" Stretch="Uniform" MouseLeftButtonDown="Monitor4_Click" Cursor="Hand"></Image>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="4" BorderThickness="0.5" BorderBrush="Black">
+            <Image x:Name="Monitor_5" Stretch="Uniform" MouseLeftButtonDown="Monitor5_Click" Cursor="Hand"></Image>
+        </Border>
+
+
+        <Border Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="0.5">
+            <DockPanel Grid.Row="3" Grid.Column="1" LastChildFill="True" HorizontalAlignment="Center">
+                <TextBlock x:Name="MonitorInfo_1" TextWrapping="Wrap" TextTrimming="WordEllipsis" LineStackingStrategy="BlockLineHeight" LineHeight="15" MaxHeight="40" DockPanel.Dock="Top" ></TextBlock>
+                <Label x:Name="MonitorInfo_1_Preis" DockPanel.Dock="Bottom" HorizontalAlignment="Center" FontSize="15"></Label>
+            </DockPanel>
+        </Border>
+
+
+
+        <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="0.5">
+            <DockPanel Grid.Row="3" Grid.Column="1" LastChildFill="True" HorizontalAlignment="Center">
+                <TextBlock x:Name="MonitorInfo_2" TextWrapping="Wrap" TextTrimming="WordEllipsis" LineStackingStrategy="BlockLineHeight" LineHeight="15" MaxHeight="40" DockPanel.Dock="Top"></TextBlock>
+                <Label x:Name="MonitorInfo_2_Preis" DockPanel.Dock="Bottom" HorizontalAlignment="Center" FontSize="15"></Label>
+            </DockPanel>
+        </Border>
+
+
+        <Border Grid.Row="2" Grid.Column="2" BorderBrush="Black" BorderThickness="0.5">
+            <DockPanel Grid.Row="3" Grid.Column="1" LastChildFill="True" HorizontalAlignment="Center">
+                <TextBlock x:Name="MonitorInfo_3" TextWrapping="Wrap" TextTrimming="WordEllipsis" LineStackingStrategy="BlockLineHeight" LineHeight="15" MaxHeight="40" DockPanel.Dock="Top"></TextBlock>
+                <Label x:Name="MonitorInfo_3_Preis" DockPanel.Dock="Bottom" HorizontalAlignment="Center" FontSize="15"></Label>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="3" BorderBrush="Black" BorderThickness="0.5">
+            <DockPanel Grid.Row="3" Grid.Column="1" LastChildFill="True" HorizontalAlignment="Center">
+                <TextBlock x:Name="MonitorInfo_4" TextWrapping="Wrap" TextTrimming="WordEllipsis" LineStackingStrategy="BlockLineHeight" LineHeight="15" MaxHeight="40" DockPanel.Dock="Top"></TextBlock>
+                <Label x:Name="MonitorInfo_4_Preis" DockPanel.Dock="Bottom" HorizontalAlignment="Center" FontSize="15"></Label>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="4" BorderBrush="Black" BorderThickness="0.5">
+            <DockPanel Grid.Row="3" Grid.Column="1" LastChildFill="True" HorizontalAlignment="Center">
+                <TextBlock x:Name="MonitorInfo_5" TextWrapping="Wrap" TextTrimming="WordEllipsis" LineStackingStrategy="BlockLineHeight" LineHeight="15" MaxHeight="40" DockPanel.Dock="Top"></TextBlock>
+                <Label x:Name="MonitorInfo_5_Preis" DockPanel.Dock="Bottom" HorizontalAlignment="Center" FontSize="15"></Label>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="4" Grid.Column="0" BorderThickness="0.5" BorderBrush="Black">
+            <Image x:Name="Monitor_6" Stretch="Uniform" MouseLeftButtonDown="Monitor6_Click" Cursor="Hand"></Image>
+        </Border>
+
+        <Border Grid.Row="4" Grid.Column="1" BorderThickness="0.5" BorderBrush="Black">
+            <Image x:Name="Monitor_7" Stretch="Uniform" MouseLeftButtonDown="Monitor7_Click" Cursor="Hand"></Image>
+        </Border>
+
+        <Border Grid.Row="4" Grid.Column="2" BorderThickness="0.5" BorderBrush="Black">
+            <Image x:Name="Monitor_8" Stretch="Uniform" MouseLeftButtonDown="Monitor8_Click" Cursor="Hand"></Image>
+        </Border>
+
+        <Border Grid.Row="4" Grid.Column="3" BorderThickness="0.5" BorderBrush="Black">
+            <Image x:Name="Monitor_9" Stretch="Uniform" MouseLeftButtonDown="Monitor9_Click" Cursor="Hand"></Image>
+        </Border>
+
+        <Border Grid.Row="4" Grid.Column="4" BorderThickness="0.5" BorderBrush="Black">
+            <Image x:Name="Monitor_10" Stretch="Uniform" MouseLeftButtonDown="Monitor10_Click" Cursor="Hand"></Image>
+        </Border>
+
+        <Border Grid.Row="5" Grid.Column="0" BorderBrush="Black" BorderThickness="0.5">
+            <DockPanel Grid.Row="3" Grid.Column="1" LastChildFill="True" HorizontalAlignment="Center">
+                <TextBlock x:Name="MonitorInfo_6" TextWrapping="Wrap" TextTrimming="WordEllipsis" LineStackingStrategy="BlockLineHeight" LineHeight="15" MaxHeight="40" DockPanel.Dock="Top"></TextBlock>
+                <Label x:Name="MonitorInfo_6_Preis" DockPanel.Dock="Bottom" HorizontalAlignment="Center" FontSize="15"></Label>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="5" Grid.Column="1" BorderBrush="Black" BorderThickness="0.5">
+            <DockPanel Grid.Row="3" Grid.Column="1" LastChildFill="True" HorizontalAlignment="Center">
+                <TextBlock x:Name="MonitorInfo_7" TextWrapping="Wrap" TextTrimming="WordEllipsis" LineStackingStrategy="BlockLineHeight" LineHeight="15" MaxHeight="40" DockPanel.Dock="Top"></TextBlock>
+                <Label x:Name="MonitorInfo_7_Preis" DockPanel.Dock="Bottom" HorizontalAlignment="Center" FontSize="15"></Label>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="5" Grid.Column="2" BorderBrush="Black" BorderThickness="0.5">
+            <DockPanel Grid.Row="3" Grid.Column="1" LastChildFill="True" HorizontalAlignment="Center">
+                <TextBlock x:Name="MonitorInfo_8" TextWrapping="Wrap" TextTrimming="WordEllipsis" LineStackingStrategy="BlockLineHeight" LineHeight="15" MaxHeight="40" DockPanel.Dock="Top"></TextBlock>
+                <Label x:Name="MonitorInfo_8_Preis" DockPanel.Dock="Bottom" HorizontalAlignment="Center" FontSize="15"></Label>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="5" Grid.Column="3" BorderBrush="Black" BorderThickness="0.5">
+            <DockPanel Grid.Row="3" Grid.Column="1" LastChildFill="True" HorizontalAlignment="Center">
+                <TextBlock x:Name="MonitorInfo_9" TextWrapping="Wrap" TextTrimming="WordEllipsis" LineStackingStrategy="BlockLineHeight" LineHeight="15" MaxHeight="40" DockPanel.Dock="Top"></TextBlock>
+                <Label x:Name="MonitorInfo_9_Preis" DockPanel.Dock="Bottom" HorizontalAlignment="Center" FontSize="15"></Label>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="5" Grid.Column="4" BorderBrush="Black" BorderThickness="0.5">
+            <DockPanel Grid.Row="3" Grid.Column="1" LastChildFill="True" HorizontalAlignment="Center">
+                <TextBlock x:Name="MonitorInfo_10" TextWrapping="Wrap" TextTrimming="WordEllipsis" LineStackingStrategy="BlockLineHeight" LineHeight="15" MaxHeight="40" DockPanel.Dock="Top"></TextBlock>
+                <Label x:Name="MonitorInfo_10_Preis" DockPanel.Dock="Bottom" HorizontalAlignment="Center" FontSize="15"></Label>
+            </DockPanel>
+        </Border>
+
+        <StackPanel Grid.Row="0" Margin="0,-2000,0,0">
+            <Label x:Name="ArtikelNummer1"></Label>
+            <Label x:Name="ArtikelNummer2"></Label>
+            <Label x:Name="ArtikelNummer3"></Label>
+            <Label x:Name="ArtikelNummer4"></Label>
+            <Label x:Name="ArtikelNummer5"></Label>
+            <Label x:Name="ArtikelNummer6"></Label>
+            <Label x:Name="ArtikelNummer7"></Label>
+            <Label x:Name="ArtikelNummer8"></Label>
+            <Label x:Name="ArtikelNummer9"></Label>
+            <Label x:Name="ArtikelNummer10"></Label>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="PC_Nation.BenutzerBearbeitenWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PC_Nation"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800" Loaded="Bearbeitung_Loaded">
+    <Grid>
+        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="0.5">
+            <StackPanel Margin="20">
+                <TextBlock Text="Benutzeraccount bearbeiten" FontWeight="DemiBold"></TextBlock>
+                <Border Margin="0,10" BorderBrush="Black" BorderThickness="0.5"></Border>
+
+                <DockPanel>
+                    <TextBlock Text="Ihre persönlichen Daten" FontWeight="DemiBold" DockPanel.Dock="Left"></TextBlock>
+                    <TextBlock Text="Ihre Adresse" FontWeight="DemiBold" HorizontalAlignment="Center" Margin="0,0,60,0"></TextBlock>
+                </DockPanel>
+
+                <DockPanel Margin="0,5">
+                    <TextBlock Text="Anrede:" DockPanel.Dock="Left"></TextBlock>
+                    <TextBlock Text="Straße und Hausnummer:" HorizontalAlignment="Center" Margin="95,0,0,0"></TextBlock>
+                </DockPanel>
+
+                <DockPanel>
+                    <ComboBox x:Name="AnredeCB" Width="180" Height="20" HorizontalAlignment="Left">
+                        <ComboBoxItem Content="Herr"></ComboBoxItem>
+                        <ComboBoxItem Content="Frau"></ComboBoxItem>
+                    </ComboBox>
+                    <TextBox x:Name="Straße_HausnrTB" Height="20" Width="180" HorizontalAlignment="Center"></TextBox>
+                </DockPanel>
+
+                <DockPanel Margin="0,10,0,5">
+                    <TextBlock Text="Vorname:" DockPanel.Dock="Left"></TextBlock>
+                    <TextBlock Text="Stadt:" HorizontalAlignment="Center" Margin="0,0,20,0"></TextBlock>
+                </DockPanel>
+
+                <DockPanel>
+                    <TextBox x:Name="VornameTB" Height="20" Width="180" HorizontalAlignment="Left"></TextBox>
+                    <TextBox x:Name="StadtTB" Height="20" Width="180" HorizontalAlignment="Center"></TextBox>
+                </DockPanel>
+
+                <DockPanel Margin="0,10,0,5">
+                    <TextBlock Text="Nachname:" DockPanel.Dock="Left"></TextBlock>
+                    <TextBlock Text="Postleitzahl:" HorizontalAlignment="Center" Margin="4,0,0,0"></TextBlock>
+                </DockPanel>
+
+                <DockPanel>
+                    <TextBox x:Name="NachnameTB" Height="20" Width="180" HorizontalAlignment="Left"></TextBox>
+                    <TextBox x:Name="PlzTB" Height="20" Width="180" HorizontalAlignment="Center"></TextBox>
+                </DockPanel>
+
+                <DockPanel Margin="0,10,0,5">
+                    <TextBlock Text="Geburtsdatum: (TT.MM.JJJJ)" DockPanel.Dock="Left"></TextBlock>
+                    <TextBlock Text="Land:" HorizontalAlignment="Center" Margin="0,0,116,0"></TextBlock>
+                </DockPanel>
+
+                <DockPanel>
+                    <TextBox x:Name="GeburtsdatumTB" Height="20" Width="180" DockPanel.Dock="Left"></TextBox>
+                    <ComboBox x:Name="LandCB" Height="20" Width="180" HorizontalAlignment="Center">
+                        <ComboBoxItem Content="Deutschland"></ComboBoxItem>
+                        <ComboBoxItem Content="Österreich"></ComboBoxItem>
+                        <ComboBoxItem Content="Frankreich"></ComboBoxItem>
+                        <ComboBoxItem Content="Italien"></ComboBoxItem>
+                        <ComboBoxItem Content="Niederlande"></ComboBoxItem>
+                        <ComboBoxItem Content="Luxemburg"></ComboBoxItem>
+                        <ComboBoxItem Content="Spanien"></ComboBoxItem>
+                        <ComboBoxItem Content="Dänemark"></ComboBoxItem>
+                        <ComboBoxItem Content="Belgien"></ComboBoxItem>
+                    </ComboBox>
+                </DockPanel>
+
+                <TextBlock Text="Ihre Anmeldedaten" FontWeight="DemiBold" Margin="0,40,0,0"></TextBlock>
+
+                <DockPanel Margin="0,5">
+                    <TextBlock Text="E-Mail-Adresse:" DockPanel.Dock="Left"></TextBlock>
+                    <TextBlock Text="Passwort:" HorizontalAlignment="Center" Margin="0,0,32,0"></TextBlock>
+                </DockPanel>
+
+                <DockPanel>
+                    <TextBox x:Name="EMailTB" DockPanel.Dock="Left" Width="180" Height="20" IsReadOnly="True"></TextBox>
+                    <TextBox x:Name="PasswortTB" Width="180" Height="20" HorizontalAlignment="Center"></TextBox>
+                </DockPanel>
+
+                <TextBlock Text="(E-Mail-Adresse kann nicht geändert werden)"></TextBlock>
+                <TextBlock x:Name="Eingabe_Prüfung" Visibility="Hidden" Foreground="Red" HorizontalAlignment="Right" Margin="0,10"></TextBlock>
+                <TextBlock x:Name="gespeichert" Visibility="Hidden" Foreground="Green" HorizontalAlignment="Right"></TextBlock>
+                <DockPanel Margin="0,10,0,0" HorizontalAlignment="Right">
+                    <Button x:Name="Ausloggen" Content="Ausloggen" Foreground="WhiteSmoke" Background="Red" Height="35" Cursor="Hand" Width="80" Margin="0,0,30,0" Click="Ausloggen_Click"></Button>
+                    <Button x:Name="Speicher_Button" Content="Speichern" Foreground="WhiteSmoke" Background="Red" Height="35" Cursor="Hand" Width="80"  Click="Speichern_Click"></Button>
+                </DockPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

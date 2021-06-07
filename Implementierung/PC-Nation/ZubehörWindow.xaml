@@ -1,0 +1,156 @@
+﻿<UserControl x:Class="PC_Nation.ZubehörWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PC_Nation"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800" Loaded="ZubehörWindow_loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="ZubehörLabel" Content="Hardware und Zubehör" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"></Label>
+
+        <Border Grid.Row="1" Grid.Column="0" BorderThickness="0.5" BorderBrush="Black">
+            <Image x:Name="Zubehör_1" Stretch="Uniform" MouseLeftButtonDown="Zubehör1_Click" Cursor="Hand"></Image>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="1" BorderThickness="0.5" BorderBrush="Black">
+            <Image x:Name="Zubehör_2" Stretch="Uniform" MouseLeftButtonDown="Zubehör2_Click" Cursor="Hand"></Image>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="2" BorderThickness="0.5" BorderBrush="Black">
+            <Image x:Name="Zubehör_3" Stretch="Uniform" MouseLeftButtonDown="Zubehör3_Click" Cursor="Hand"></Image>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="3" BorderThickness="0.5" BorderBrush="Black">
+            <Image x:Name="Zubehör_4" Stretch="Uniform" MouseLeftButtonDown="Zubehör4_Click" Cursor="Hand"></Image>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="4" BorderThickness="0.5" BorderBrush="Black">
+            <Image x:Name="Zubehör_5" Stretch="Uniform" MouseLeftButtonDown="Zubehör5_Click" Cursor="Hand"></Image>
+        </Border>
+
+
+        <Border Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="0.5">
+            <DockPanel Grid.Row="3" Grid.Column="1" LastChildFill="True" HorizontalAlignment="Center">
+                <TextBlock x:Name="ZubehörInfo_1" TextWrapping="Wrap" TextTrimming="WordEllipsis" LineStackingStrategy="BlockLineHeight" LineHeight="15" MaxHeight="40" DockPanel.Dock="Top" ></TextBlock>
+                <Label x:Name="ZubehörInfo_1_Preis" DockPanel.Dock="Bottom" HorizontalAlignment="Center" FontSize="15"></Label>
+            </DockPanel>
+        </Border>
+
+
+
+        <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="0.5">
+            <DockPanel Grid.Row="3" Grid.Column="1" LastChildFill="True" HorizontalAlignment="Center">
+                <TextBlock x:Name="ZubehörInfo_2" TextWrapping="Wrap" TextTrimming="WordEllipsis" LineStackingStrategy="BlockLineHeight" LineHeight="15" MaxHeight="40" DockPanel.Dock="Top"></TextBlock>
+                <Label x:Name="ZubehörInfo_2_Preis" DockPanel.Dock="Bottom" HorizontalAlignment="Center" FontSize="15"></Label>
+            </DockPanel>
+        </Border>
+
+
+        <Border Grid.Row="2" Grid.Column="2" BorderBrush="Black" BorderThickness="0.5">
+            <DockPanel Grid.Row="3" Grid.Column="1" LastChildFill="True" HorizontalAlignment="Center">
+                <TextBlock x:Name="ZubehörInfo_3" TextWrapping="Wrap" TextTrimming="WordEllipsis" LineStackingStrategy="BlockLineHeight" LineHeight="15" MaxHeight="40" DockPanel.Dock="Top"></TextBlock>
+                <Label x:Name="ZubehörInfo_3_Preis" DockPanel.Dock="Bottom" HorizontalAlignment="Center" FontSize="15"></Label>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="3" BorderBrush="Black" BorderThickness="0.5">
+            <DockPanel Grid.Row="3" Grid.Column="1" LastChildFill="True" HorizontalAlignment="Center">
+                <TextBlock x:Name="ZubehörInfo_4" TextWrapping="Wrap" TextTrimming="WordEllipsis" LineStackingStrategy="BlockLineHeight" LineHeight="15" MaxHeight="40" DockPanel.Dock="Top"></TextBlock>
+                <Label x:Name="ZubehörInfo_4_Preis" DockPanel.Dock="Bottom" HorizontalAlignment="Center" FontSize="15"></Label>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="4" BorderBrush="Black" BorderThickness="0.5">
+            <DockPanel Grid.Row="3" Grid.Column="1" LastChildFill="True" HorizontalAlignment="Center">
+                <TextBlock x:Name="ZubehörInfo_5" TextWrapping="Wrap" TextTrimming="WordEllipsis" LineStackingStrategy="BlockLineHeight" LineHeight="15" MaxHeight="40" DockPanel.Dock="Top"></TextBlock>
+                <Label x:Name="ZubehörInfo_5_Preis" DockPanel.Dock="Bottom" HorizontalAlignment="Center" FontSize="15"></Label>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="4" Grid.Column="0" BorderThickness="0.5" BorderBrush="Black">
+            <Image x:Name="Zubehör_6" Stretch="Uniform" MouseLeftButtonDown="Zubehör6_Click" Cursor="Hand"></Image>
+        </Border>
+
+        <Border Grid.Row="4" Grid.Column="1" BorderThickness="0.5" BorderBrush="Black">
+            <Image x:Name="Zubehör_7" Stretch="Uniform" MouseLeftButtonDown="Zubehör7_Click" Cursor="Hand"></Image>
+        </Border>
+
+        <Border Grid.Row="4" Grid.Column="2" BorderThickness="0.5" BorderBrush="Black">
+            <Image x:Name="Zubehör_8" Stretch="Uniform" MouseLeftButtonDown="Zubehör8_Click" Cursor="Hand"></Image>
+        </Border>
+
+        <Border Grid.Row="4" Grid.Column="3" BorderThickness="0.5" BorderBrush="Black">
+            <Image x:Name="Zubehör_9" Stretch="Uniform" MouseLeftButtonDown="Zubehör9_Click" Cursor="Hand"></Image>
+        </Border>
+
+        <Border Grid.Row="4" Grid.Column="4" BorderThickness="0.5" BorderBrush="Black">
+            <Image x:Name="Zubehör_10" Stretch="Uniform" MouseLeftButtonDown="Zubehör10_Click" Cursor="Hand"></Image>
+        </Border>
+
+        <Border Grid.Row="5" Grid.Column="0" BorderBrush="Black" BorderThickness="0.5">
+            <DockPanel Grid.Row="3" Grid.Column="1" LastChildFill="True" HorizontalAlignment="Center">
+                <TextBlock x:Name="ZubehörInfo_6" TextWrapping="Wrap" TextTrimming="WordEllipsis" LineStackingStrategy="BlockLineHeight" LineHeight="15" MaxHeight="40" DockPanel.Dock="Top"></TextBlock>
+                <Label x:Name="ZubehörInfo_6_Preis" DockPanel.Dock="Bottom" HorizontalAlignment="Center" FontSize="15"></Label>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="5" Grid.Column="1" BorderBrush="Black" BorderThickness="0.5">
+            <DockPanel Grid.Row="3" Grid.Column="1" LastChildFill="True" HorizontalAlignment="Center">
+                <TextBlock x:Name="ZubehörInfo_7" TextWrapping="Wrap" TextTrimming="WordEllipsis" LineStackingStrategy="BlockLineHeight" LineHeight="15" MaxHeight="40" DockPanel.Dock="Top"></TextBlock>
+                <Label x:Name="ZubehörInfo_7_Preis" DockPanel.Dock="Bottom" HorizontalAlignment="Center" FontSize="15"></Label>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="5" Grid.Column="2" BorderBrush="Black" BorderThickness="0.5">
+            <DockPanel Grid.Row="3" Grid.Column="1" LastChildFill="True" HorizontalAlignment="Center">
+                <TextBlock x:Name="ZubehörInfo_8" TextWrapping="Wrap" TextTrimming="WordEllipsis" LineStackingStrategy="BlockLineHeight" LineHeight="15" MaxHeight="40" DockPanel.Dock="Top"></TextBlock>
+                <Label x:Name="ZubehörInfo_8_Preis" DockPanel.Dock="Bottom" HorizontalAlignment="Center" FontSize="15"></Label>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="5" Grid.Column="3" BorderBrush="Black" BorderThickness="0.5">
+            <DockPanel Grid.Row="3" Grid.Column="1" LastChildFill="True" HorizontalAlignment="Center">
+                <TextBlock x:Name="ZubehörInfo_9" TextWrapping="Wrap" TextTrimming="WordEllipsis" LineStackingStrategy="BlockLineHeight" LineHeight="15" MaxHeight="40" DockPanel.Dock="Top"></TextBlock>
+                <Label x:Name="ZubehörInfo_9_Preis" DockPanel.Dock="Bottom" HorizontalAlignment="Center" FontSize="15"></Label>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Row="5" Grid.Column="4" BorderBrush="Black" BorderThickness="0.5">
+            <DockPanel Grid.Row="3" Grid.Column="1" LastChildFill="True" HorizontalAlignment="Center">
+                <TextBlock x:Name="ZubehörInfo_10" TextWrapping="Wrap" TextTrimming="WordEllipsis" LineStackingStrategy="BlockLineHeight" LineHeight="15" MaxHeight="40" DockPanel.Dock="Top"></TextBlock>
+                <Label x:Name="ZubehörInfo_10_Preis" DockPanel.Dock="Bottom" HorizontalAlignment="Center" FontSize="15"></Label>
+            </DockPanel>
+        </Border>
+
+        <StackPanel Grid.Row="0" Margin="0,-2000,0,0">
+            <Label x:Name="ArtikelNummer1"></Label>
+            <Label x:Name="ArtikelNummer2"></Label>
+            <Label x:Name="ArtikelNummer3"></Label>
+            <Label x:Name="ArtikelNummer4"></Label>
+            <Label x:Name="ArtikelNummer5"></Label>
+            <Label x:Name="ArtikelNummer6"></Label>
+            <Label x:Name="ArtikelNummer7"></Label>
+            <Label x:Name="ArtikelNummer8"></Label>
+            <Label x:Name="ArtikelNummer9"></Label>
+            <Label x:Name="ArtikelNummer10"></Label>
+        </StackPanel>
+    </Grid>
+</UserControl>

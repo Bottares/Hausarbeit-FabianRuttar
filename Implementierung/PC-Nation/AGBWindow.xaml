@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="PC_Nation.AGBWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PC_Nation"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid>
+        <ScrollViewer Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5">
+            <StackPanel>
+                <TextBlock Text="Allgemeine Geschäftsbedingungen" FontSize="20" FontWeight="DemiBold"></TextBlock>
+                <TextBlock Text="§ 1 Grundlegende Bestimmungen" Margin="0,10,0,0" FontSize="16" FontWeight="DemiBold"></TextBlock>
+                <TextBlock Text="(1) Die nachstehenden Geschäftsbedingungen gelten für Verträge, die Sie mit uns als Anbieter über die Internetseite www.PC-Nation.de schließen. Soweit nicht anders vereinbart, wird der Einbeziehung gegebenenfalls von Ihnen verwendeter eigener Bedingungen widersprochen." 
+                       Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="(2) Verbraucher im Sinne der nachstehenden Regelungen ist jede natürliche Person, die ein Rechtsgeschäft zu Zwecken abschließt, die überwiegend weder ihrer gewerblichen noch ihrer selbständigen beruflichen Tätigkeit zugerechnet werden kann. Unternehmer ist jede 
+                       natürliche oder juristische Person oder eine rechtsfähige Personengesellschaft, die bei Abschluss eines Rechtsgeschäfts in Ausübung ihrer selbständigen beruflichen oder gewerblichen Tätigkeit handelt." Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Margin="0,10,0,0" TextWrapping="Wrap"></TextBlock>
+
+                <TextBlock Text="§ 2 Zustandekommen des Vertrages" Margin="0,10,0,0" FontSize="16" FontWeight="DemiBold"></TextBlock>
+                <TextBlock Text="(1) Gegenstand des Vertrages ist der Verkauf von Waren ." Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="(2) Bereits mit dem Einstellen des jeweiligen Produkts auf unserer Internetseite unterbreiten wir Ihnen ein verbindliches Angebot zum Abschluss eines Vertrages zu den in der Artikelbeschreibung angegebenen Bedingungen." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="(3) Der Vertrag kommt über das Online-Warenkorbsystem wie folgt zustande:
+Die zum Kauf beabsichtigten Waren werden im Warenkorb abgelegt. Über die entsprechende Schaltfläche in der Navigationsleiste können Sie den Warenkorb aufrufen und dort jederzeit Änderungen vornehmen.
+Nach Aufrufen der Seite Kasse und der Eingabe der persönlichen Daten sowie der Zahlungs- und Versandbedingungen werden abschließend nochmals alle Bestelldaten auf der Bestellübersichtsseite angezeigt.
+Soweit Sie als Zahlungsart ein Sofortzahl-System (z.B. PayPal / PayPal Express, Amazon-Payments, Sofort) nutzen, werden Sie entweder in unserem Online-Shop auf die Bestellübersichtsseite geführt oder Sie werden zunächst auf die Internetseite des Anbieters des Sofortzahl-Systems weitergeleitet.
+Erfolgt die Weiterleitung zu dem jeweiligen Sofortzahl-System, nehmen Sie dort die entsprechende Auswahl bzw. Eingabe Ihrer Daten vor. Abschließend werden Sie zurück in unseren Online-Shop auf die Bestellübersichtsseite geleitet.
+Vor Absenden der Bestellung haben Sie die Möglichkeit, hier sämtliche Angaben nochmals zu überprüfen, zu ändern (auch über die Funktion zurück des Internetbrowsers) bzw. den Kauf abzubrechen.
+Mit dem Absenden der Bestellung über die Schaltfläche zahlungspflichtig bestellen erklären Sie rechtsverbindlich die Annahme des Angebotes, wodurch der Vertrag zustande kommt." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="(4) Ihre Anfragen zur Erstellung eines Angebotes sind für Sie unverbindlich. Wir unterbreiten Ihnen hierzu ein verbindliches Angebot in Textform (z.B. per E-Mail), welches Sie innerhalb von 5 Tagen annehmen können." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="(5) Die Abwicklung der Bestellung und Übermittlung aller im Zusammenhang mit dem Vertragsschluss erforderlichen Informationen erfolgt per E-Mail zum Teil automatisiert. Sie haben deshalb sicherzustellen, dass die von Ihnen bei uns hinterlegte E-Mail-Adresse zutreffend ist, der Empfang der E-Mails technisch sichergestellt und insbesondere nicht durch SPAM-Filter verhindert wird." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="§ 3 Zurückbehaltungsrecht, Eigentumsvorbehalt" FontWeight="DemiBold" FontSize="16" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="(1) Ein Zurückbehaltungsrecht können Sie nur ausüben, soweit es sich um Forderungen aus demselben Vertragsverhältnis handelt." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="(2) Die Ware bleibt bis zur vollständigen Zahlung des Kaufpreises unser Eigentum." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="(3) Sind Sie Unternehmer, gilt ergänzend Folgendes:" TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="a) Wir behalten uns das Eigentum an der Ware bis zum vollständigen Ausgleich aller Forderungen aus der laufenden Geschäftsbeziehung vor. Vor Übergang des Eigentums an der Vorbehaltsware ist eine Verpfändung oder Sicherheitsübereignung nicht zulässig." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="b) Sie können die Ware im ordentlichen Geschäftsgang weiterverkaufen. Für diesen Fall treten Sie bereits jetzt alle Forderungen in Höhe des Rechnungsbetrages, die Ihnen aus dem Weiterverkauf erwachsen, an uns ab, wir nehmen die Abtretung an. Sie sind weiter zur Einziehung der Forderung ermächtigt. Soweit Sie Ihren Zahlungsverpflichtungen nicht ordnungsgemäß nachkommen, behalten wir uns allerdings vor, die Forderung selbst einzuziehen." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="c) Bei Verbindung und Vermischung der Vorbehaltsware erwerben wir Miteigentum an der neuen Sache im Verhältnis des Rechnungswertes der Vorbehaltsware zu den anderen verarbeiteten Gegenständen zum Zeitpunkt der Verarbeitung." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="d) Wir verpflichten uns, die uns zustehenden Sicherheiten auf Ihr Verlangen insoweit freizugeben, als der realisierbare Wert unserer Sicherheiten die zu sichernde Forderung um mehr als 10% übersteigt. Die Auswahl der freizugebenden Sicherheiten obliegt uns." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="§ 4 Gewährleistung" FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="(1) Es bestehen die gesetzlichen Mängelhaftungsrechte." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="(2) Als Verbraucher werden Sie gebeten, die Sache bei Lieferung umgehend auf Vollständigkeit, offensichtliche Mängel und Transportschäden zu überprüfen und uns sowie dem Spediteur Beanstandungen schnellstmöglich mitzuteilen. Kommen Sie dem nicht nach, hat dies keine Auswirkung auf Ihre gesetzlichen Gewährleistungsansprüche." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="(3) Soweit Sie Unternehmer sind, gilt abweichend von den vorstehenden Gewährleistungsregelungen:" TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="a) Als Beschaffenheit der Sache gelten nur unsere eigenen Angaben und die Produktbeschreibung des Herstellers als vereinbart, nicht jedoch sonstige Werbung, öffentliche Anpreisungen und Äußerungen des Herstellers." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="b) Bei Mängeln leisten wir nach unserer Wahl Gewähr durch Nachbesserung oder Nachlieferung. Schlägt die Mangelbeseitigung fehl, können Sie nach Ihrer Wahl Minderung verlangen oder vom Vertrag zurücktreten. Die Mängelbeseitigung gilt nach erfolglosem zweiten Versuch als fehlgeschlagen, wenn sich nicht insbesondere aus der Art der Sache oder des Mangels oder den sonstigen Umständen etwas anderes ergibt. Im Falle der Nachbesserung müssen wir nicht die erhöhten Kosten tragen, die durch die Verbringung der Ware an einen anderen Ort als den Erfüllungsort entstehen, sofern die Verbringung nicht dem bestimmungsgemäßen Gebrauch der Ware entspricht." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="c) Die Gewährleistungsfrist beträgt ein Jahr ab Ablieferung der Ware. Die Fristverkürzung gilt nicht:" TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="- für uns zurechenbare schuldhaft verursachte Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit und bei vorsätzlich oder grob fahrlässig verursachten sonstigen Schäden;" TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="- soweit wir den Mangel arglistig verschwiegen oder eine Garantie für die Beschaffenheit der Sache übernommen haben;" TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="- bei Sachen, die entsprechend ihrer üblichen Verwendungsweise für ein Bauwerk verwendet worden sind und dessen Mangelhaftigkeit verursacht haben;" TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="- bei gesetzlichen Rückgriffsansprüchen, die Sie im Zusammenhang mit Mängelrechten gegen uns haben." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="§ 5 Rechtswahl, Erfüllungsort, Gerichtsstand" FontSize="16" FontWeight="DemiBold" TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="(1) Es gilt deutsches Recht. Bei Verbrauchern gilt diese Rechtswahl nur, soweit hierdurch der durch zwingende Bestimmungen des Rechts des Staates des gewöhnlichen Aufenthaltes des Verbrauchers gewährte Schutz nicht entzogen wird (Günstigkeitsprinzip)." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="(2) Erfüllungsort für alle Leistungen aus den mit uns bestehenden Geschäftsbeziehungen sowie Gerichtsstand ist unser Sitz, soweit Sie nicht Verbraucher, sondern Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen sind. Dasselbe gilt, wenn Sie keinen allgemeinen Gerichtsstand in Deutschland oder der EU haben oder der Wohnsitz oder gewöhnliche Aufenthalt im Zeitpunkt der Klageerhebung nicht bekannt ist. Die Befugnis, auch das Gericht an einem anderen gesetzlichen Gerichtsstand anzurufen, bleibt hiervon unberührt." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+                <TextBlock Text="(3) Die Bestimmungen des UN-Kaufrechts finden ausdrücklich keine Anwendung." TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

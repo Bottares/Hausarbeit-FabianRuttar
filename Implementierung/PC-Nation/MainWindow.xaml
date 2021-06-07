@@ -1,0 +1,91 @@
+﻿<Window x:Class="PC_Nation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PC_Nation" xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
+        mc:Ignorable="d"
+        Title="PC-Nation" Height="900" Width="800" Loaded="MainWindow_Loaded">
+    <Grid x:Name="StartGrid" Margin="25">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="Logo_Icon" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="258" Height="253" Margin="0,-100,100,0" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Margin="80,25">
+            <controls:AutoCompleteBox x:Name="Suchzeile" FilterMode="Contains" Text="Nach Produkt suchen..." MouseEnter="Suchzeile_Clear" MouseLeave="Suchzeile_Add"></controls:AutoCompleteBox>
+        </StackPanel>
+
+        <Button x:Name="Such_Button" Grid.Row="0" Grid.Column="3" Height="22" Width="25" Margin="14,25,0,0" VerticalAlignment="Top" Background="Red"/>
+
+        <DockPanel Grid.Row="0" Grid.Column="4" Margin="0,20,0,100">
+            <Button x:Name="Button_Favoriten" Background="DimGray" Width="35" DockPanel.Dock="Left">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="50"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button x:Name="Button_Konto" Background="DimGray" Width="35" DockPanel.Dock="Left" Margin="15,0,0,0">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="50"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button x:Name="Button_Warenkorb" Background="DimGray" Width="35" DockPanel.Dock="Right">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="50"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </DockPanel>
+
+        <Image x:Name="Herz_Icon" Grid.Column="4" Margin="0,15,115,95" MouseLeftButtonDown="Favoriten_Click" Cursor="Hand"/>
+        <Image x:Name="Benutzer_Icon" Grid.Column="4" Margin="15,17,7,100" MouseLeftButtonDown="Benutzer_Click" Cursor="Hand"/>
+        <Image x:Name="Warenkorb_Icon" Grid.Column="4" Margin="65,24,-20,105" MouseLeftButtonDown="Warenkorb_Click" Cursor="Hand"/>
+        <Image x:Name="Lupen_Icon" Grid.Column="3" Margin="68,26,55,103" MouseLeftButtonDown="Suchen_Click" Cursor="Hand"/>
+
+        <Button x:Name="StartButton" Content="Start" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="Red" Foreground="White" FontSize="15" Width="146" Height="40" Margin="0,20" Click="Start_Button_Click" Cursor="Hand"/>
+        <Button x:Name="PCButton" Content="Office/Gaming PC" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="WhiteSmoke" Width="146" Height="40" Margin="0,20" Click="PC_Button_Click" Cursor="Hand"/>
+        <Button x:Name="MonitorButton" Content="PC Monitore" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="WhiteSmoke" Width="146" Height="40" Margin="0,20" Click="Monitor_Button_Click" Cursor="Hand"/>
+        <Button x:Name="NotebookButton" Content="Notebooks" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Background="WhiteSmoke" Width="146" Height="40" Margin="0,20" Click="Notebook_Button_Click" Cursor="Hand"/>
+        <Button x:Name="ZubehörButton" Content="Hardware/Zubehör" Grid.Row="0" Grid.Column="4" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Background="WhiteSmoke" Width="146" Height="40" Margin="0,20" Click="Zubehör_Button_Click" Cursor="Hand"/>
+
+        <ContentControl x:Name="contentControl" Grid.Row="1" Grid.ColumnSpan="5"></ContentControl>
+
+        <Border Grid.Row="7" Grid.ColumnSpan="5" BorderBrush="Black" BorderThickness="0,0.5,0,0" Margin="0,40"></Border>
+        <Label Content="INFORMATIONEN" Grid.Row="7" Grid.Column="0" Foreground="Red" FontSize="15" Margin="0,15"></Label>
+
+        <DockPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,40,0,0" LastChildFill="True">
+            <Label Content="Über PC Nation" DockPanel.Dock="Top" MouseLeftButtonDown="ÜberUns_Click" Cursor="Hand"></Label>
+            <Label Content="Versand und Zahlungsbedingungen" DockPanel.Dock="Top" MouseLeftButtonDown="Versand_Click" Cursor="Hand"></Label>
+            <Label Content="Allgemeine Geschäftsbedingungen" DockPanel.Dock="Top" MouseLeftButtonDown="AGB_Click" Cursor="Hand"></Label>
+            <Label Content="Rückgabe" DockPanel.Dock="Top" MouseLeftButtonDown="Rückgabe_Click" Cursor="Hand"></Label>
+        </DockPanel>
+
+        <DockPanel Grid.Row="7" Grid.Column="2" Margin="0,40,0,0" LastChildFill="True">
+            <Label Content="Kontakt" DockPanel.Dock="Top" MouseLeftButtonDown="Kontakt_Click" Cursor="Hand"></Label>
+            <Label Content="Datenschutz" DockPanel.Dock="Top" MouseLeftButtonDown="Datenschutz_Click" Cursor="Hand"></Label>
+        </DockPanel>
+
+        <DockPanel  Margin="0,-2000,0,0" LastChildFill="True">
+            <Button x:Name="Weiß" Background="WhiteSmoke" Foreground="Black" Height="50" DockPanel.Dock="Top"></Button>
+            <Button x:Name="Rot" Background="Red" Foreground="WhiteSmoke" Height="50" DockPanel.Dock="Top"></Button>
+        </DockPanel>
+    </Grid>
+</Window>

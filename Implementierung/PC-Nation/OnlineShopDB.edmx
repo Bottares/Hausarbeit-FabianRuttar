@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OnlineShopDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bestellung">
+          <Key>
+            <PropertyRef Name="BestellungsID" />
+          </Key>
+          <Property Name="BestellungsID" Type="int" Nullable="false" />
+          <Property Name="Bestelldatum" Type="datetime" />
+          <Property Name="Menge" Type="int" />
+          <Property Name="Preis" Type="nvarchar" MaxLength="100" />
+          <Property Name="Bestellstatus" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Kunde">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Passwort" Type="nvarchar" MaxLength="100" />
+          <Property Name="Anrede" Type="nvarchar" MaxLength="100" />
+          <Property Name="Vorname" Type="nvarchar" MaxLength="100" />
+          <Property Name="Nachname" Type="nvarchar" MaxLength="100" />
+          <Property Name="Geburtsdatum" Type="nvarchar" MaxLength="100" />
+          <Property Name="Ort" Type="nvarchar" MaxLength="100" />
+          <Property Name="Postleitzahl" Type="nvarchar" MaxLength="100" />
+          <Property Name="Straße_HausNr" Type="nvarchar" MaxLength="100" />
+          <Property Name="Land" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="OnlineShop">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Ort" Type="nvarchar" MaxLength="100" />
+          <Property Name="Postleitzahl" Type="nvarchar" MaxLength="100" />
+          <Property Name="Straße" Type="nvarchar" MaxLength="100" />
+          <Property Name="Hausnummer" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Produkt">
+          <Key>
+            <PropertyRef Name="ProduktID" />
+          </Key>
+          <Property Name="ProduktID" Type="int" Nullable="false" />
+          <Property Name="ArtikelNummer" Type="nvarchar" MaxLength="10" />
+          <Property Name="ProduktName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Beschreibung" Type="nvarchar" MaxLength="200" />
+          <Property Name="Preis" Type="nvarchar" MaxLength="100" />
+          <Property Name="Bild" Type="nvarchar" MaxLength="200" />
+          <Property Name="KategorieID" Type="int" />
+        </EntityType>
+        <EntityType Name="Produktkategorie">
+          <Key>
+            <PropertyRef Name="KategorieID" />
+          </Key>
+          <Property Name="KategorieID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Rückgabe">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Rechnungsnummer" Type="nvarchar" MaxLength="100" />
+          <Property Name="Artikelnummer" Type="nvarchar" MaxLength="100" />
+          <Property Name="Kommentar" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <Association Name="FK__Produkt__Kategor__492FC531">
+          <End Role="Produktkategorie" Type="Self.Produktkategorie" Multiplicity="0..1" />
+          <End Role="Produkt" Type="Self.Produkt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produktkategorie">
+              <PropertyRef Name="KategorieID" />
+            </Principal>
+            <Dependent Role="Produkt">
+              <PropertyRef Name="KategorieID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OnlineShopDBModelStoreContainer">
+          <EntitySet Name="Bestellung" EntityType="Self.Bestellung" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kunde" EntityType="Self.Kunde" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OnlineShop" EntityType="Self.OnlineShop" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Produkt" EntityType="Self.Produkt" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Produktkategorie" EntityType="Self.Produktkategorie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rückgabe" EntityType="Self.Rückgabe" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Produkt__Kategor__492FC531" Association="Self.FK__Produkt__Kategor__492FC531">
+            <End Role="Produktkategorie" EntitySet="Produktkategorie" />
+            <End Role="Produkt" EntitySet="Produkt" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OnlineShopDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bestellung">
+          <Key>
+            <PropertyRef Name="BestellungsID" />
+          </Key>
+          <Property Name="BestellungsID" Type="Int32" Nullable="false" />
+          <Property Name="Bestelldatum" Type="DateTime" Precision="3" />
+          <Property Name="Menge" Type="Int32" />
+          <Property Name="Preis" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Bestellstatus" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Kunde">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Passwort" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Anrede" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Vorname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Nachname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Geburtsdatum" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Ort" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Postleitzahl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Straße_HausNr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Land" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OnlineShop">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ort" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Postleitzahl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Straße" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Hausnummer" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Produkt">
+          <Key>
+            <PropertyRef Name="ProduktID" />
+          </Key>
+          <Property Name="ProduktID" Type="Int32" Nullable="false" />
+          <Property Name="ArtikelNummer" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ProduktName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Beschreibung" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Preis" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Bild" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="KategorieID" Type="Int32" />
+          <NavigationProperty Name="Produktkategorie" Relationship="Self.FK__Produkt__Kategor__492FC531" FromRole="Produkt" ToRole="Produktkategorie" />
+        </EntityType>
+        <EntityType Name="Produktkategorie">
+          <Key>
+            <PropertyRef Name="KategorieID" />
+          </Key>
+          <Property Name="KategorieID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Produkt" Relationship="Self.FK__Produkt__Kategor__492FC531" FromRole="Produktkategorie" ToRole="Produkt" />
+        </EntityType>
+        <EntityType Name="Rückgabe">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Rechnungsnummer" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Artikelnummer" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Kommentar" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK__Produkt__Kategor__492FC531">
+          <End Role="Produktkategorie" Type="Self.Produktkategorie" Multiplicity="0..1" />
+          <End Role="Produkt" Type="Self.Produkt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produktkategorie">
+              <PropertyRef Name="KategorieID" />
+            </Principal>
+            <Dependent Role="Produkt">
+              <PropertyRef Name="KategorieID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OnlineShopDB" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bestellung" EntityType="Self.Bestellung" />
+          <EntitySet Name="Kunde" EntityType="Self.Kunde" />
+          <EntitySet Name="OnlineShop" EntityType="Self.OnlineShop" />
+          <EntitySet Name="Produkt" EntityType="Self.Produkt" />
+          <EntitySet Name="Produktkategorie" EntityType="Self.Produktkategorie" />
+          <EntitySet Name="Rückgabe" EntityType="Self.Rückgabe" />
+          <AssociationSet Name="FK__Produkt__Kategor__492FC531" Association="Self.FK__Produkt__Kategor__492FC531">
+            <End Role="Produktkategorie" EntitySet="Produktkategorie" />
+            <End Role="Produkt" EntitySet="Produkt" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OnlineShopDBModelStoreContainer" CdmEntityContainer="OnlineShopDB">
+          <EntitySetMapping Name="Bestellung">
+            <EntityTypeMapping TypeName="OnlineShopDBModel.Bestellung">
+              <MappingFragment StoreEntitySet="Bestellung">
+                <ScalarProperty Name="BestellungsID" ColumnName="BestellungsID" />
+                <ScalarProperty Name="Bestelldatum" ColumnName="Bestelldatum" />
+                <ScalarProperty Name="Menge" ColumnName="Menge" />
+                <ScalarProperty Name="Preis" ColumnName="Preis" />
+                <ScalarProperty Name="Bestellstatus" ColumnName="Bestellstatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kunde">
+            <EntityTypeMapping TypeName="OnlineShopDBModel.Kunde">
+              <MappingFragment StoreEntitySet="Kunde">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Passwort" ColumnName="Passwort" />
+                <ScalarProperty Name="Anrede" ColumnName="Anrede" />
+                <ScalarProperty Name="Vorname" ColumnName="Vorname" />
+                <ScalarProperty Name="Nachname" ColumnName="Nachname" />
+                <ScalarProperty Name="Geburtsdatum" ColumnName="Geburtsdatum" />
+                <ScalarProperty Name="Ort" ColumnName="Ort" />
+                <ScalarProperty Name="Postleitzahl" ColumnName="Postleitzahl" />
+                <ScalarProperty Name="Straße_HausNr" ColumnName="Straße_HausNr" />
+                <ScalarProperty Name="Land" ColumnName="Land" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OnlineShop">
+            <EntityTypeMapping TypeName="OnlineShopDBModel.OnlineShop">
+              <MappingFragment StoreEntitySet="OnlineShop">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Ort" ColumnName="Ort" />
+                <ScalarProperty Name="Postleitzahl" ColumnName="Postleitzahl" />
+                <ScalarProperty Name="Straße" ColumnName="Straße" />
+                <ScalarProperty Name="Hausnummer" ColumnName="Hausnummer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Produkt">
+            <EntityTypeMapping TypeName="OnlineShopDBModel.Produkt">
+              <MappingFragment StoreEntitySet="Produkt">
+                <ScalarProperty Name="ProduktID" ColumnName="ProduktID" />
+                <ScalarProperty Name="ArtikelNummer" ColumnName="ArtikelNummer" />
+                <ScalarProperty Name="ProduktName" ColumnName="ProduktName" />
+                <ScalarProperty Name="Beschreibung" ColumnName="Beschreibung" />
+                <ScalarProperty Name="Preis" ColumnName="Preis" />
+                <ScalarProperty Name="Bild" ColumnName="Bild" />
+                <ScalarProperty Name="KategorieID" ColumnName="KategorieID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Produktkategorie">
+            <EntityTypeMapping TypeName="OnlineShopDBModel.Produktkategorie">
+              <MappingFragment StoreEntitySet="Produktkategorie">
+                <ScalarProperty Name="KategorieID" ColumnName="KategorieID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rückgabe">
+            <EntityTypeMapping TypeName="OnlineShopDBModel.Rückgabe">
+              <MappingFragment StoreEntitySet="Rückgabe">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Rechnungsnummer" ColumnName="Rechnungsnummer" />
+                <ScalarProperty Name="Artikelnummer" ColumnName="Artikelnummer" />
+                <ScalarProperty Name="Kommentar" ColumnName="Kommentar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Kein" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
