@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OnlineShopDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bestellung">
+    <Key>
+      <PropertyRef Name="BestellungsID" />
+    </Key>
+    <Property Name="BestellungsID" Type="int" Nullable="false" />
+    <Property Name="Bestelldatum" Type="datetime" />
+    <Property Name="Menge" Type="int" />
+    <Property Name="Preis" Type="nvarchar" MaxLength="100" />
+    <Property Name="Bestellstatus" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Kunde">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Passwort" Type="nvarchar" MaxLength="100" />
+    <Property Name="Anrede" Type="nvarchar" MaxLength="100" />
+    <Property Name="Vorname" Type="nvarchar" MaxLength="100" />
+    <Property Name="Nachname" Type="nvarchar" MaxLength="100" />
+    <Property Name="Geburtsdatum" Type="nvarchar" MaxLength="100" />
+    <Property Name="Ort" Type="nvarchar" MaxLength="100" />
+    <Property Name="Postleitzahl" Type="nvarchar" MaxLength="100" />
+    <Property Name="Straße_HausNr" Type="nvarchar" MaxLength="100" />
+    <Property Name="Land" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="OnlineShop">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Ort" Type="nvarchar" MaxLength="100" />
+    <Property Name="Postleitzahl" Type="nvarchar" MaxLength="100" />
+    <Property Name="Straße" Type="nvarchar" MaxLength="100" />
+    <Property Name="Hausnummer" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Produkt">
+    <Key>
+      <PropertyRef Name="ProduktID" />
+    </Key>
+    <Property Name="ProduktID" Type="int" Nullable="false" />
+    <Property Name="ArtikelNummer" Type="nvarchar" MaxLength="10" />
+    <Property Name="ProduktName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Beschreibung" Type="nvarchar" MaxLength="200" />
+    <Property Name="Preis" Type="nvarchar" MaxLength="100" />
+    <Property Name="Bild" Type="nvarchar" MaxLength="200" />
+    <Property Name="KategorieID" Type="int" />
+  </EntityType>
+  <EntityType Name="Produktkategorie">
+    <Key>
+      <PropertyRef Name="KategorieID" />
+    </Key>
+    <Property Name="KategorieID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Rückgabe">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Rechnungsnummer" Type="nvarchar" MaxLength="100" />
+    <Property Name="Artikelnummer" Type="nvarchar" MaxLength="100" />
+    <Property Name="Kommentar" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <Association Name="FK__Produkt__Kategor__492FC531">
+    <End Role="Produktkategorie" Type="Self.Produktkategorie" Multiplicity="0..1" />
+    <End Role="Produkt" Type="Self.Produkt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produktkategorie">
+        <PropertyRef Name="KategorieID" />
+      </Principal>
+      <Dependent Role="Produkt">
+        <PropertyRef Name="KategorieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OnlineShopDBModelStoreContainer">
+    <EntitySet Name="Bestellung" EntityType="Self.Bestellung" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kunde" EntityType="Self.Kunde" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OnlineShop" EntityType="Self.OnlineShop" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Produkt" EntityType="Self.Produkt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Produktkategorie" EntityType="Self.Produktkategorie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rückgabe" EntityType="Self.Rückgabe" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Produkt__Kategor__492FC531" Association="Self.FK__Produkt__Kategor__492FC531">
+      <End Role="Produktkategorie" EntitySet="Produktkategorie" />
+      <End Role="Produkt" EntitySet="Produkt" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

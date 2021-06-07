@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OnlineShopDBModelStoreContainer" CdmEntityContainer="OnlineShopDB">
+    <EntitySetMapping Name="Bestellung">
+      <EntityTypeMapping TypeName="OnlineShopDBModel.Bestellung">
+        <MappingFragment StoreEntitySet="Bestellung">
+          <ScalarProperty Name="BestellungsID" ColumnName="BestellungsID" />
+          <ScalarProperty Name="Bestelldatum" ColumnName="Bestelldatum" />
+          <ScalarProperty Name="Menge" ColumnName="Menge" />
+          <ScalarProperty Name="Preis" ColumnName="Preis" />
+          <ScalarProperty Name="Bestellstatus" ColumnName="Bestellstatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kunde">
+      <EntityTypeMapping TypeName="OnlineShopDBModel.Kunde">
+        <MappingFragment StoreEntitySet="Kunde">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Passwort" ColumnName="Passwort" />
+          <ScalarProperty Name="Anrede" ColumnName="Anrede" />
+          <ScalarProperty Name="Vorname" ColumnName="Vorname" />
+          <ScalarProperty Name="Nachname" ColumnName="Nachname" />
+          <ScalarProperty Name="Geburtsdatum" ColumnName="Geburtsdatum" />
+          <ScalarProperty Name="Ort" ColumnName="Ort" />
+          <ScalarProperty Name="Postleitzahl" ColumnName="Postleitzahl" />
+          <ScalarProperty Name="Straße_HausNr" ColumnName="Straße_HausNr" />
+          <ScalarProperty Name="Land" ColumnName="Land" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OnlineShop">
+      <EntityTypeMapping TypeName="OnlineShopDBModel.OnlineShop">
+        <MappingFragment StoreEntitySet="OnlineShop">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Ort" ColumnName="Ort" />
+          <ScalarProperty Name="Postleitzahl" ColumnName="Postleitzahl" />
+          <ScalarProperty Name="Straße" ColumnName="Straße" />
+          <ScalarProperty Name="Hausnummer" ColumnName="Hausnummer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Produkt">
+      <EntityTypeMapping TypeName="OnlineShopDBModel.Produkt">
+        <MappingFragment StoreEntitySet="Produkt">
+          <ScalarProperty Name="ProduktID" ColumnName="ProduktID" />
+          <ScalarProperty Name="ArtikelNummer" ColumnName="ArtikelNummer" />
+          <ScalarProperty Name="ProduktName" ColumnName="ProduktName" />
+          <ScalarProperty Name="Beschreibung" ColumnName="Beschreibung" />
+          <ScalarProperty Name="Preis" ColumnName="Preis" />
+          <ScalarProperty Name="Bild" ColumnName="Bild" />
+          <ScalarProperty Name="KategorieID" ColumnName="KategorieID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Produktkategorie">
+      <EntityTypeMapping TypeName="OnlineShopDBModel.Produktkategorie">
+        <MappingFragment StoreEntitySet="Produktkategorie">
+          <ScalarProperty Name="KategorieID" ColumnName="KategorieID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rückgabe">
+      <EntityTypeMapping TypeName="OnlineShopDBModel.Rückgabe">
+        <MappingFragment StoreEntitySet="Rückgabe">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Rechnungsnummer" ColumnName="Rechnungsnummer" />
+          <ScalarProperty Name="Artikelnummer" ColumnName="Artikelnummer" />
+          <ScalarProperty Name="Kommentar" ColumnName="Kommentar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

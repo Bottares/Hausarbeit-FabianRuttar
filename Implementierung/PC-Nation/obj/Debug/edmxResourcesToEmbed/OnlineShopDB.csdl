@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OnlineShopDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bestellung">
+    <Key>
+      <PropertyRef Name="BestellungsID" />
+    </Key>
+    <Property Name="BestellungsID" Type="Int32" Nullable="false" />
+    <Property Name="Bestelldatum" Type="DateTime" Precision="3" />
+    <Property Name="Menge" Type="Int32" />
+    <Property Name="Preis" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Bestellstatus" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Kunde">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Passwort" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Anrede" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Vorname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Nachname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Geburtsdatum" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Ort" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Postleitzahl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Straße_HausNr" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Land" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="OnlineShop">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ort" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Postleitzahl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Straße" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Hausnummer" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Produkt">
+    <Key>
+      <PropertyRef Name="ProduktID" />
+    </Key>
+    <Property Name="ProduktID" Type="Int32" Nullable="false" />
+    <Property Name="ArtikelNummer" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ProduktName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Beschreibung" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Preis" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Bild" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="KategorieID" Type="Int32" />
+    <NavigationProperty Name="Produktkategorie" Relationship="Self.FK__Produkt__Kategor__492FC531" FromRole="Produkt" ToRole="Produktkategorie" />
+  </EntityType>
+  <EntityType Name="Produktkategorie">
+    <Key>
+      <PropertyRef Name="KategorieID" />
+    </Key>
+    <Property Name="KategorieID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Produkt" Relationship="Self.FK__Produkt__Kategor__492FC531" FromRole="Produktkategorie" ToRole="Produkt" />
+  </EntityType>
+  <EntityType Name="Rückgabe">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rechnungsnummer" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Artikelnummer" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Kommentar" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK__Produkt__Kategor__492FC531">
+    <End Role="Produktkategorie" Type="Self.Produktkategorie" Multiplicity="0..1" />
+    <End Role="Produkt" Type="Self.Produkt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produktkategorie">
+        <PropertyRef Name="KategorieID" />
+      </Principal>
+      <Dependent Role="Produkt">
+        <PropertyRef Name="KategorieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OnlineShopDB" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bestellung" EntityType="Self.Bestellung" />
+    <EntitySet Name="Kunde" EntityType="Self.Kunde" />
+    <EntitySet Name="OnlineShop" EntityType="Self.OnlineShop" />
+    <EntitySet Name="Produkt" EntityType="Self.Produkt" />
+    <EntitySet Name="Produktkategorie" EntityType="Self.Produktkategorie" />
+    <EntitySet Name="Rückgabe" EntityType="Self.Rückgabe" />
+    <AssociationSet Name="FK__Produkt__Kategor__492FC531" Association="Self.FK__Produkt__Kategor__492FC531">
+      <End Role="Produktkategorie" EntitySet="Produktkategorie" />
+      <End Role="Produkt" EntitySet="Produkt" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
